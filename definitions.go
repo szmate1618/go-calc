@@ -1,6 +1,6 @@
 package main
 
-const prompt string = ">"
+const prompt string = "> "
 
 const greeting string = "Are you ready for some MATH?"
 const farewell string = "Thank you for using this incredibly sophisticated piece of software"
