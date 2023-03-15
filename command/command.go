@@ -1,7 +1,7 @@
-package commandhandler
+package command
 
 import (
-	"github.com/szmate1618/go-calc/expressionevaluator"
+	"github.com/szmate1618/go-calc/expression"
 )
 
 func RunCommand(command string) (string, error) {
@@ -10,7 +10,7 @@ func RunCommand(command string) (string, error) {
 		return "exit", nil
 	}
 
-	value, err := expressionevaluator.EvaluateExpression(command)
+	value, err := expression.EvaluateExpression(command)
 
 	return value, err
 }
