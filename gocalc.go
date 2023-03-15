@@ -7,14 +7,14 @@ import (
 	"os"
 	"strings"
 
-	"github.com/szmate1618/go-calc/commandhandler"
+	"github.com/szmate1618/go-calc/command"
 )
 
 func main() {
 
 	fmt.Println(colorGreen + greeting + colorReset)
 
-	command := ""
+	line := ""
 	err := error(nil)
 	result := ""
 	reader := bufio.NewReader(os.Stdin)
@@ -23,14 +23,14 @@ func main() {
 
 		fmt.Print(prompt)
 
-		command, err = reader.ReadString('\n')
+		line, err = reader.ReadString('\n')
 		if err != nil {
 			log.Fatal(err)
 		}
 
-		command = strings.TrimSpace(command)
+		line = strings.TrimSpace(line)
 
-		result, err = commandhandler.RunCommand(command)
+		result, err = command.RunCommand(line)
 	}
 
 	fmt.Println(colorGreen + farewell + colorReset)
